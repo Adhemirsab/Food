@@ -1,0 +1,21 @@
+.form_input, .form_textarea  {
+    border: thin solid #dedede;
+    border-radius: 0.25rem;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    outline: none;
+    display: block;
+    width: 70%;
+    font-size: 1rem;
+    line-height: 1;
+    background-color: transparent;
+}
+
+.form_textarea {
+    font-family: inherit;
+    resize: none;
+}
+p {
+    font-weight: bold;
+    color: #dc3545;
+}
