@@ -28,12 +28,32 @@ export const useCreate = (initialForm, validationCreate) => {
     }
   };
 
+  // const formData = new FormData();
+  // formData.append("name", form.name);
+  // formData.append("image", form.image);
+  // formData.append("summary", form.summary);
+  // formData.append("healthScore", form.healthScore);
+  // formData.append("steps", form.steps);
+  // formData.append("diets", JSON.stringify(form.diets));
+  const handleFile = (e) => {
+    const file = e.target.files[0];
+    setForm({
+      ...form,
+      image: file,
+    });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors(validationCreate(form));
+
+    // console.log(formData.get("image"));
+    console.log(e.target);
     if (Object.keys(errors).length === 0) {
       setLoading(true);
-      dispatch(postRecipe(form)).then((res) => {
+      const data = new FormData(e.target);
+
+      dispatch(postRecipe(data)).then((res) => {
         setLoading(false);
         setResponse(true);
         setForm(initialForm);
@@ -56,6 +76,7 @@ export const useCreate = (initialForm, validationCreate) => {
     handleBlur,
     handleSubmit,
     handleCheck,
+    handleFile,
   };
 };
 

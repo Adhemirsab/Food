@@ -2,8 +2,8 @@ const axios = require("axios");
 const { Recipe, Diet } = require("../db");
 const API_KEY = process.env.API_KEY;
 const API_KEY1 = process.env.API_KEY1;
-
-const apiUrl = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY1}&addRecipeInformation=true&number=99`;
+const PUBLIC_URL = process.env.PUBLIC_URL;
+const apiUrl = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=99`;
 
 // const apiUrlId = `https://api.spoonacular.com/recipes/{id}/information?apiKey=${API_KEY}`;
 
@@ -50,17 +50,37 @@ const getAllRecipes = async () => {
 };
 
 const createRecipe = async (recipe) => {
-  const { name, image, summary, healthScore, steps, diets } = recipe;
+  const { body, file } = recipe;
+  // const newRecipe = {
+  //   name: body.name,
+  //   image: `${PUBLIC_URL}/${file.filename}`,
+  //   summary: body.summary,
+  //   healthScore: Number(body.healthScore),
+  //   steps: body.steps,
+  // };
+  // console.log(newRecipe);
   const newRecipe = await Recipe.create({
-    name,
-    image,
-    summary,
-    healthScore,
-    steps,
+    name: body.name,
+    image: `${PUBLIC_URL}/${file.filename}`,
+    summary: body.summary,
+    healthScore: Number(body.healthScore),
+    steps: body.steps,
   });
 
-  newRecipe.addDiets(diets);
+  newRecipe.addDiets(body.diets.map((diet) => Number(diet)));
   return newRecipe;
+
+  // const { name, image, summary, healthScore, steps, diets } = recipe;
+  // const newRecipe = await Recipe.create({
+  //   name,
+  //   image,
+  //   summary,
+  //   healthScore,
+  //   steps,
+  // });
+
+  // newRecipe.addDiets(diets);
+  // return newRecipe;
 };
 
 const getRecipeById = async (id) => {

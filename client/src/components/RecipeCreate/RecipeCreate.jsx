@@ -15,7 +15,7 @@ import Message from "../../helpers/Message";
 function RecipeCreate() {
   const initialForm = {
     name: "",
-    image: "",
+    image: null,
     summary: "",
     healthScore: "",
     steps: "",
@@ -28,6 +28,7 @@ function RecipeCreate() {
     handleBlur,
     handleSubmit,
     handleCheck,
+    handleFile,
     loading,
     response,
   } = useCreate(initialForm, validationCreate);
@@ -66,10 +67,10 @@ function RecipeCreate() {
           <label htmlFor="image">Image:</label>
           <input
             id="image"
-            type="text"
-            value={form.image}
+            type="file"
+            // value={form.image}
             name="image"
-            onChange={handleChange}
+            onChange={handleFile}
             onBlur={handleBlur}
             required
           />
@@ -130,7 +131,7 @@ function RecipeCreate() {
                   <input
                     type="checkbox"
                     value={diet.id}
-                    name="diet"
+                    name="diets"
                     onChange={handleCheck}
                     onBlur={handleBlur}
                   />

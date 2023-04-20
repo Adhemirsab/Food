@@ -6,9 +6,9 @@ const validationCreate = (form) => {
     errors.name = "Se requiere un nombre";
   }
 
-  if (!form.image.trim()) {
-    errors.image = "Se requiere un nombre";
-  }
+  // if (!form.image.trim()) {
+  //   errors.image = "Se requiere un nombre";
+  // }
 
   if (!form.summary.trim()) {
     errors.summary = "Se requiere un resumen de la receta";

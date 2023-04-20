@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const uploadMiddleware = require("../utils/handleStorage");
 const {
   getAllRecipes,
   createRecipe,
@@ -40,20 +41,30 @@ router.get("/:idRecipe", async (req, res) => {
   }
 });
 
-router.post("/", async (req, res) => {
+router.post("/", uploadMiddleware.single("image"), async (req, res) => {
   try {
-    const { name, image, summary, healthScore, steps, diets } = req.body;
+    const { body, file } = req;
     const newRecipe = await createRecipe({
-      name,
-      image,
-      summary,
-      healthScore,
-      steps,
-      diets,
+      body,
+      file,
     });
     res.status(201).json(newRecipe);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
+  // try {
+  //   const { name, image, summary, healthScore, steps, diets } = req.body;
+  //   const newRecipe = await createRecipe({
+  //     name,
+  //     image,
+  //     summary,
+  //     healthScore,
+  //     steps,
+  //     diets,
+  //   });
+  //   res.status(201).json(newRecipe);
+  // } catch (error) {
+  //   res.status(500).json({ error: error.message });
+  // }
 });
 module.exports = router;

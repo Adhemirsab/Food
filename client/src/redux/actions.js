@@ -59,13 +59,10 @@ export const getDiets = () => {
   };
 };
 
-export const postRecipe = (payload) => {
+export const postRecipe = (form) => {
   return async (dispatch) => {
     try {
-      const response = await axios.post(
-        "http://localhost:3001/recipes",
-        payload
-      );
+      const response = await axios.post("http://localhost:3001/recipes", form);
       return response;
     } catch (error) {
       console.log(error);

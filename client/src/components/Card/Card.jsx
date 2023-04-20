@@ -11,7 +11,7 @@ function Card({ image, name, diets, id }) {
         <div>
           {diets &&
             diets.map((diet, index) => {
-              return <h3 key={index}>{diet.name ? diet.name : ""}</h3>;
+              return <h3 key={index}>{diet.name ? diet.name : diet}</h3>;
             })}
         </div>
       </div>
