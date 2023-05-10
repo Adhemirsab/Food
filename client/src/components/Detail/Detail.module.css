@@ -1,0 +1,80 @@
+.container {
+    margin: 20px 50px;
+}
+.detail__container {
+    box-shadow: 2px 2px 5px #888888;
+    /* border: 2px blue solid; */
+    display: flex;
+    padding: 0.75rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.head__container {
+    /* border: 2px fuchsia solid; */
+    padding: 0.75rem;
+    border-right: 1px black solid;
+}
+
+.head__container img {
+    width: 250px;
+    height: 200px;
+}
+.head__container_number {
+    display: flex;
+    justify-content: space-around;
+}
+
+.head__container_button {
+    height: 2em;
+    background-color: #03C988;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.head__container_button:hover {
+    background-color: #2F58CD;
+}
+.content__container {
+    /* border: 2px fuchsia solid; */
+    padding: 0.75rem;
+    
+}
+
+.content__detail {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-bottom: 1px black solid;
+}
+
+.content__detail h1 {
+    margin: 0;
+    font-size: 1.4rem;
+}
+.content__detail p {
+    text-align: justify;
+    
+}
+.content__detail div {
+    display: flex;
+    margin: 5px 0;
+}
+.content_list  {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+.content__detail_diets {
+    border: 2px #03C988 solid;
+    border-radius: 5px;
+    color: #03C988;
+    padding: 0.3rem;
+    margin: 0;
+    margin: 2px;
+}

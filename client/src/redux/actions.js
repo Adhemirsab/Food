@@ -7,6 +7,7 @@ import {
   ORDER_BY_NAME,
   GET_NAME_RECIPE,
   GET_DIETS,
+  FILTER_BY_HEALTHSCORE,
 } from "./actionTypes";
 
 export const getRecipes = () => {
@@ -20,12 +21,17 @@ export const getRecipes = () => {
     }
   };
 };
+
 export const filterRecipeByDiet = (payload) => {
   return { type: ADD_BY_DIET, payload };
 };
 
 export const filterByApiBd = (payload) => {
   return { type: FILTER_BY_APIBD, payload };
+};
+
+export const filterByHealthScore = (payload) => {
+  return { type: FILTER_BY_HEALTHSCORE, payload };
 };
 
 export const orderByName = (payload) => {

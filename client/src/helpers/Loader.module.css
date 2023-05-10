@@ -1,3 +1,13 @@
+
+.message {
+  height: 50px ;
+    padding: "1rem";
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #FFF;
+    font-weight: bold;
+    background-color: #03C988;
+}
 .lds_ring {
     display: inline-block;
     position: relative;

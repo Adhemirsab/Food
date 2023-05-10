@@ -1,21 +1,35 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import styles from "./Card.module.css";
 
 function Card({ image, name, diets, id }) {
   return (
-    <Link to={`/detail/${id}`}>
-      <div>
-        <h3>{name}</h3>
+    <div className={styles.card__container}>
+      <div className={styles.card__image}>
+        <img src={image} alt="" />
+      </div>
+      <div className={styles.card__content}>
+        <h4>{name}</h4>
         {/* <h5>{name}</h5> */}
-        <img src={image} alt="" width="200px" height="250px" />
-        <div>
+        <div className={styles.card__diets}>
           {diets &&
             diets.map((diet, index) => {
-              return <h3 key={index}>{diet.name ? diet.name : diet}</h3>;
+              return (
+                <p className={styles.diets} key={index}>
+                  {diet.name ? diet.name : diet}
+                </p>
+              );
             })}
         </div>
+
+        <div className={styles.card__footer}>
+          <Link to={`/detail/${id}`}>
+            <button className={styles.card__button}>Leer Mas</button>
+          </Link>
+          <button className={styles.card__button}>Compartir</button>
+        </div>
       </div>
-    </Link>
+    </div>
   );
 }
 

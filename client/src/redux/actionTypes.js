@@ -6,3 +6,4 @@ export const ORDER_BY_NAME = "ORDER_BY_NAME";
 export const GET_NAME_RECIPE = "GET_NAME_RECIPE";
 export const GET_DIETS = "GET_DIETS";
 export const POST_RECIPE = "POST_RECIPE";
+export const FILTER_BY_HEALTHSCORE = "ILTER_BY_HEALTHSCORE";

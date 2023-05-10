@@ -28,13 +28,6 @@ export const useCreate = (initialForm, validationCreate) => {
     }
   };
 
-  // const formData = new FormData();
-  // formData.append("name", form.name);
-  // formData.append("image", form.image);
-  // formData.append("summary", form.summary);
-  // formData.append("healthScore", form.healthScore);
-  // formData.append("steps", form.steps);
-  // formData.append("diets", JSON.stringify(form.diets));
   const handleFile = (e) => {
     const file = e.target.files[0];
     setForm({

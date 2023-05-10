@@ -1,0 +1,25 @@
+nav {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+.paginado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0 180px;
+}
+.paginado__lista {
+    list-style: none;
+    
+}
+
+.paginado__lista a {
+    
+    /* border-radius: 50%; */
+    /* padding: 4px; */
+    /* border: 1px rgb(37, 99, 235) solid; */
+    cursor: pointer;
+    font-weight: bold;
+    color: rgb(37, 99, 235);
+}

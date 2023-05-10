@@ -7,6 +7,7 @@ import {
   POST_RECIPE,
   GET_DIETS,
   GET_RECIPE,
+  FILTER_BY_HEALTHSCORE,
 } from "./actionTypes";
 
 const initialState = {
@@ -86,12 +87,24 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
       };
-    case GET_DIETS: {
+    case GET_DIETS:
       return {
         ...state,
         diets: action.payload,
       };
-    }
+    case FILTER_BY_HEALTHSCORE:
+      const allRecipes3 = state.allRecipes;
+      const healthScoreFiltered =
+        action.payload === "todos"
+          ? allRecipes3
+          : allRecipes3.filter(
+              (recipe) => recipe.healthScore == action.payload
+            );
+
+      return {
+        ...state,
+        recipes: healthScoreFiltered,
+      };
     default:
       return {
         ...state,

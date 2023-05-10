@@ -1,0 +1,10 @@
+
+.select {
+    margin-bottom: 20px;
+}
+.container__cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* align-items: center; */
+}

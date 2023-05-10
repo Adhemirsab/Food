@@ -1,28 +1,19 @@
 import React from "react";
-import { UseForm } from "../../hooks/useForm";
-import styles from "./LoginForm.module.css";
-import validateForm from "./validateForm.js";
+import { useLogin } from "../../hooks/useLogin";
 
 function LoginForm() {
   const initialForm = {
-    name: "",
     email: "",
-    subject: "",
-    comments: "",
+    password: "",
   };
-  const {
-    form,
-    errors,
-    loading,
-    response,
-    handleChange,
-    handleBlur,
-    handleSubmit,
-  } = UseForm(initialForm, validateForm);
+  const { form, errors, handleChange, handleBlur, handleSubmit } = useLogin(
+    initialForm
+    // validateLogin
+  );
   return (
     <div>
-      <h1>hola desde login form</h1>
-      <form onSubmit={handleSubmit}>
+      <h1>hola desde Register form</h1>
+      {/* <form onSubmit={handleSubmit}>
         <input
           className={styles.form_input}
           type="text"
@@ -48,28 +39,17 @@ function LoginForm() {
         <input
           className={styles.form_input}
           type="text"
-          name="subject"
-          placeholder="Asunto a tratar"
+          name="password"
+          placeholder="contrase;a"
           onChange={handleChange}
           onBlur={handleBlur}
-          value={form.subject}
+          value={form.password}
           required
         />
-        {errors.subject && <p>{errors.subject}</p>}
-        <textarea
-          className={styles.form_textarea}
-          name="comments"
-          cols="50"
-          row="5"
-          placeholder="Escribe tus comentarios"
-          onChange={handleChange}
-          onBlur={handleBlur}
-          value={form.comments}
-          required
-        ></textarea>
-        {errors.comments && <p>{errors.comments}</p>}
+        {errors.password && <p>{errors.password}</p>}
+      
         <input type="submit" value="Enviar" />
-      </form>
+      </form> */}
     </div>
   );
 }

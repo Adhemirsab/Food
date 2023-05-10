@@ -1,0 +1,67 @@
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    background: linear-gradient(to right, rgb(59, 130, 246), rgb(37, 99, 235));
+    padding: 0 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.toolbar_nav {
+    display: flex;
+}
+.toolbar_logo {
+    display: flex;
+    align-items: center;
+}
+.toolbar_logo a {
+    text-decoration: none;
+}
+.toolbar_logo span {
+    color: white;
+    font-size: larger;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.3rem;
+}
+.toolbar_logo span:hover {
+    color: black;
+}
+.toolbar_list {
+    display: flex;
+}
+.toolbar_list li {
+  list-style: none;
+}
+
+.toolbar_list li a {
+    text-decoration: none;
+    padding: 10px;
+    color: white;
+    font-size: 1.3rem;
+}
+
+.toolbar_list li a:hover {
+    color: black;
+}
+.toolbar_button {
+    display: flex;
+    gap: 10px;
+}
+.toolbar_button button {
+    background-color: black;
+    font-family: inherit;
+    font-size: 1.2rem;
+    border: none;
+    color: white;
+    cursor: pointer;
+    height: 2rem;
+    border-radius: 5px;
+    
+}
+.toolbar_button button:hover {
+    color: black;
+    background-color: white;
+}
